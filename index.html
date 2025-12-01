@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YICHEN QU | Academic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        bio: {
+                            blue: '#007AFF', 
+                            cyan: '#5AC8FA', 
+                            gold: '#FFD60A',
+                            green: '#34C759',
+                            purple: '#AF52DE',
+                        }
+                    },
+                    animation: {
+                        'blob-slow': 'blob 20s infinite alternate',
+                        'float-gentle': 'float 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1) rotate(0deg)' },
+                            '50%': { transform: 'translate(50px, -30px) scale(1.1) rotate(5deg)' },
+                            '100%': { transform: 'translate(-20px, 40px) scale(0.9) rotate(-5deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.9), 0 15px 40px -10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .liquid-glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(40px) saturate(150%);
+            -webkit-backdrop-filter: blur(40px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            box-shadow: inset 0 0 30px rgba(50, 200, 100, 0.05), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hover-lift { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -10px rgba(0, 122, 255, 0.2); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased relative min-h-screen selection:bg-bio-blue/30 selection:text-bio-blue">
+
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full bg-blue-100/50 blur-[120px] animate-blob-slow"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-cyan-100/50 blur-[120px] animate-blob-slow" style="animation-delay: -5s;"></div>
+    </div>
+
+    <nav class="fixed w-full top-0 z-50 transition-all duration-300 pt-6 px-4">
+        <div class="max-w-6xl mx-auto h-16 rounded-full liquid-glass flex justify-between items-center px-6 md:px-8">
+            <a href="#" class="text-lg font-bold tracking-tight flex items-center gap-2 text-slate-900">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bio-green opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-bio-green"></span>
+                </span>
+                YICHEN QU
+            </a>
+            <div class="hidden md:flex space-x-10 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-bio-blue transition-colors">Background & Vision</a>
+                <a href="#research" class="hover:text-bio-blue transition-colors">Research Projects</a>
+            </div>
+            <a href="mailto:YiChen_AlexQu@outlook.com" class="px-6 py-2.5 text-sm font-bold bg-slate-900 text-white rounded-full hover:bg-bio-blue transition shadow-lg">Connect</a>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-28 px-6 max-w-5xl mx-auto text-center reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50/80 border border-blue-200 text-bio-blue text-sm font-bold tracking-wide uppercase mb-8 animate-float-gentle liquid-glass">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Bio-Nanotech Researcher
+        </div>
+        <h1 class="text-6xl md:text-8xl font-extrabold leading-none mb-6 tracking-tight text-slate-900">
+            YICHEN QU
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-medium text-slate-600 max-w-3xl mx-auto leading-snug mb-10">
+            Pioneering <span class="text-bio-green font-bold">Fluorescent Diagnostics</span> & <span class="text-bio-blue font-bold">Advanced Materials</span>.
+        </h2>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#research" class="px-10 py-4 bg-bio-blue text-white rounded-full font-bold text-lg hover:bg-blue-600 transition shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1">
+                View Research
+            </a>
+            <a href="#" class="px-10 py-4 bg-white/60 text-slate-900 border-2 border-slate-200/80 rounded-full font-bold text-lg hover:bg-white transition hover:-translate-y-1 liquid-glass">
+                Download CV
+            </a>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8">
+            
+            <div class="md:col-span-5 flex flex-col gap-6">
+                <div class="liquid-glass rounded-[2.5rem] p-3 reveal rotate-[-1deg] hover:rotate-0 transition duration-500">
+                    <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden bg-gray-200">
+                        <img src="photo.jpg" alt="Yichen Qu" class="w-full h-full object-cover scale-105 hover:scale-100 transition duration-700">
+                    </div>
+                </div>
+                
+                <div class="liquid-glass rounded-[2rem] p-8 reveal">
+                    <h3 class="text-xl font-bold mb-4 text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-bio-blue rounded-full"></span> Background
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                        I am currently pursuing a B.S. in <strong>Food & Nutritional Science</strong> at <strong>Macau University of Science and Technology (MUST)</strong>. 
+                        <br><br>
+                        However, my primary research focus and career aspiration lie in <strong>Biomaterials</strong> and <strong>In-Vitro Diagnostics (IVD)</strong>. I aim to bridge the gap between nutritional biochemistry and advanced nanomaterial synthesis for clinical applications.
+                    </p>
+                    <div class="bg-blue-50/50 rounded-xl p-4 border border-blue-100">
+                        <div class="text-xs text-bio-blue font-bold uppercase tracking-wider mb-1">Current GPA</div>
+                        <div class="text-3xl font-extrabold text-slate-900">3.41 <span class="text-xl text-slate-500 font-medium">/ 4.0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 flex flex-col gap-6">
+                
+                <div class="liquid-glass rounded-[2.5rem] p-10 reveal hover-lift">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-bio-green rounded-full"></span> Career Outlook & Vision
+                    </h3>
+                    <p class="text-slate-700 text-lg leading-relaxed mb-6">
+                        Driven by a passion for scientific discovery, I thrive in complex experimental environments. My resilience in the face of failure—and ability to derive insights from it—defines my research philosophy.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed border-l-4 border-bio-gold pl-4 italic">
+                        "I am committed to aligning my research with the <strong>UN Sustainable Development Goals (SDGs)</strong>, specifically targeting global public health challenges through the development of rapid, accessible diagnostic tools."
+                    </p>
+                </div>
+
+                <div class="liquid-glass rounded-[2.5rem] p-10 reveal hover-lift flex-grow">
+                    <h3 class="text-xl font-bold mb-6 text-slate-900 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-bio-purple rounded-full"></span> Technical Arsenal
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 md:col-span-1 space-y-3">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Characterization</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">STEM Analysis</span>
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">XRD</span>
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">DLS</span>
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">FTIR & UV-VIS</span>
+                            </div>
+                        </div>
+                        <div class="col-span-2 md:col-span-1 space-y-3">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Software & Lab</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">Origin Lab</span>
+                                <span class="px-3 py-1.5 bg-white/80 rounded-lg text-sm font-semibold text-slate-700 border border-slate-200 shadow-sm">Jade</span>
+                                <span class="px-3 py-1.5 bg-blue-50 rounded-lg text-sm font-semibold text-bio-blue border border-blue-100 shadow-sm">QDs Synthesis</span>
+                                <span class="px-3 py-1.5 bg-green-50 rounded-lg text-sm font-semibold text-green-700 border border-green-100 shadow-sm">Bilingual (EN/CN)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 reveal">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-2">Selected Research</h2>
+            <p class="text-slate-500 text-lg">Innovations in Rapid Detection & Material Science.</p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8">
+            
+            <div class="md:col-span-12 lg:col-span-8 liquid-glass-dark rounded-[3rem] p-8 md:p-10 relative overflow-hidden group reveal">
+                <div class="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-green-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+                <div class="relative z-10">
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-sm font-bold shadow-[0_0_15px_rgba(251,191,36,0.3)]">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                            Patent Pending
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-indigo-400/20 text-indigo-300 border border-indigo-400/30 text-sm font-bold shadow-[0_0_15px_rgba(129,140,248,0.3)]">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            SCI Paper in Prep
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 text-slate-300 border border-white/10 text-sm font-bold">
+                            FDCT Funded
+                        </span>
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-white mb-4">Quantum Dot Microspheres for COVID-19 Detection</h3>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="rounded-2xl overflow-hidden border border-white/20 h-48 md:h-56 bg-black relative group/img">
+                            <img src="strips.jpg" alt="Lateral Flow Assay" class="w-full h-full object-contain object-center hover:scale-110 transition duration-700">
+                            <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm p-2 text-center text-xs text-white font-medium">Lateral Flow Assay Results</div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border border-white/20 h-48 md:h-56 bg-black relative group/img">
+                            <img src="vials.jpg" alt="Quantum Dots Vials" class="w-full h-full object-cover hover:scale-110 transition duration-700">
+                            <div class="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm p-2 text-center text-xs text-white font-medium">Synthesized CsPbBr3 QDs</div>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Aimed to synthesize ultra-stable, low-cost QD microspheres via <strong>low-temperature solid-phase sintering</strong>. I conquered the "high-temperature agglomeration" issue in traditional synthesis, successfully creating CsPbBr3 QD microspheres. Developed a novel COVID-19 test strip with a sensitivity of <strong>0.12 ng/mL</strong>, enabling efficient mass screening.
+                    </p>
+                </div>
+            </div>
+
+            <div class="md:col-span-12 lg:col-span-4 flex flex-col gap-6">
+                <div class="liquid-glass rounded-[2.5rem] p-8 hover-lift reveal flex-grow flex flex-col">
+                    <div class="text-sm md:text-base font-extrabold text-bio-blue uppercase tracking-wider mb-2">
+                        FDCT Funded Project
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-tight">Alzheimer’s Early Screening</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 flex-grow">
+                        Synthesized Upconversion Nanoparticles via "synthesis-sintering" for ultra-sensitive p-tau protein detection.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">Core Member</span>
+                    </div>
+                </div>
+
+                <div class="liquid-glass rounded-[2.5rem] p-8 hover-lift reveal flex-grow flex flex-col">
+                    <div class="text-sm md:text-base font-extrabold text-bio-purple uppercase tracking-wider mb-2">
+                        Zhejiang Univ. Key Lab
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-tight">Targeted Cell Imaging</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-4 flex-grow">
+                        Engineered Perovskite QDs for specific binding to RON receptor proteins, achieving high-contrast 3T3-RON imaging.
+                    </p>
+                    <div class="mt-auto">
+                         <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">Key Lab Project</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-4 reveal text-center border-t border-slate-200/50">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8">Let's Connect</h2>
+        <div class="flex justify-center gap-4 mb-8">
+            <a href="mailto:YiChen_AlexQu@outlook.com" class="px-6 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-bio-blue transition">Email Me</a>
+            <a href="tel:+8613771827922" class="px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-bold hover:bg-green-50 transition">Call / WeChat</a>
+        </div>
+        <p class="text-slate-400 text-sm">© 2024 YICHEN QU. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
